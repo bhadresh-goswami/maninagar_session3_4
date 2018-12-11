@@ -1,0 +1,185 @@
+<div>
+  This is my first Div
+</div>
+
+
+
+
+<div *ngIf="a>b">
+  the value of a {{a}} is greater than b {{b}}!
+</div>
+<div *ngIf="b>a">
+  the value of b {{b}} is greater than a {{a}}!
+</div>
+<hr>
+
+<br><br>
+<div *ngIf= "a>b; else second;">
+  the value of a {{a}} is greater than b {{b}}!
+
+</div>
+
+<ng-template #second>
+  the value of b {{b}} is greater than a {{a}}!
+</ng-template>
+
+
+<hr>
+<br>
+<br>
+
+<ng-template [ngIf]="a>b" [ngIfElse]="second1">
+<div >
+  the value of a {{a}} is greater than b {{b}}!
+
+</div>
+</ng-template>
+<ng-template #second1>
+    <div>
+  the value of b {{b}} is greater than a {{a}}!
+  </div>
+</ng-template>
+
+<hr>
+<br><br>
+
+<ng-container *ngIf="a>b; then condition1; else elsecondition "></ng-container>
+
+
+
+<ng-template #condition1>
+    
+        <div style="background-color: red;color:white" >
+          the value of a {{a}} is greater than b {{b}}!
+        
+        </div>
+</ng-template>
+
+<ng-template #elsecondition>
+    <div style="background-color: red;color:white" >
+  the value of b {{b}} is greater than a {{a}}!
+  </div>
+</ng-template>
+
+<hr>
+<br><br>
+<nav style="cursor: pointer;">
+    <span (click)="tab=1">Tab 1</span> | 
+    <span (click)="tab=2">Tab 2</span> | 
+    <span (click)="tab=3">Tab Other</span> | 
+</nav>
+<nav>
+    <button (click)="tab=1">Tab 1</button> | 
+    <button (click)="tab=2">Tab 2</button> | 
+    <button (click)="tab=3">Tab Other</button> | 
+</nav>
+<div [ngSwitch]="tab">
+    <div *ngSwitchCase="1" style="padding:100px;background-color: red">
+      
+    </div>
+    <div *ngSwitchCase="2" style="padding:100px;background-color: green">
+      
+    </div>
+    
+  <div *ngSwitchDefault style="padding:100px;background-color:yellow">
+    
+    </div>
+</div>
+
+<hr>
+<br><br>
+<ul *ngFor="let n of names">
+  <li>{{n}}</li>
+</ul>
+
+<br><Br>
+  <hr>
+
+<table>
+    <tr>
+      <th>Country Name</th>
+      <th>Person Name</th>
+    </tr>
+    <tr *ngFor="let p of persons" [ngStyle]="{'background-color':'red','color':'white'}">
+        <td>{{p.name}}</td>
+        <td>{{p.country}}</td>
+    </tr>
+  </table>
+
+
+  
+<br><Br>
+  <hr>
+
+<table>
+    <tr>
+      <th>Country Name</th>
+      <th>Person Name</th>
+    </tr>
+    <tr *ngFor="let p of persons" [ngStyle]="{'background-color':getColor(p.country),'color':'white'}">
+        <td>{{p.name}}</td>
+        <td>{{p.country}}</td>
+    </tr>
+  </table>
+<button (click)="onclick()">Change Value</button>
+  <div [ngClass]="{'error':isOk==false,'message':isOk==true}">
+    your message should be here!
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <hr>
+  <h1>
+  {{bdate | date}}
+
+  </h1>
+
+  <h1>
+    {{bdate | date:"MM/dd/yy"}}
+  </h1>
+
+  
+  <h1>
+      {{bdate | date | uppercase}}
+    </h1>
+    
+    <h1>
+      {{23333 | currency}}
+    </h1>
+    
+    <h1>
+        {{23333 | currency:'INR'}}
+      </h1>
+      
+    <h1>
+        {{23333 | currency:'CAD'}}
+      </h1>
+
+      <br><br><Br>
+
+        {{personDetails | json}}
+
+        <br><br><br>
+<!-- 
+        <div>
+            <code>promise|async</code>: 
+            <button (click)="clicked()">{{ arrived ? 'Reset' : 'Resolve' }}</button>
+            <span>Wait for it... {{ greeting | async }}</span>
+          </div>
+
+
+           -->
+
+           <h1>
+              {{55 | mypipe:'Eve'}}
+            </h1>
+            <h1>
+              {{525 | mypipe:'Odd'}}
+            </h1>
+            <h1>
+              {{554 | mypipe:'asdasd'}}
+            </h1>
+            <h1>
+              {{555 | mypipe:'Odd'}}
+            </h1>

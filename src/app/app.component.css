@@ -1,0 +1,24 @@
+div
+{
+    background-color: aqua;
+    color: black
+}
+
+.error{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    -moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px; /* future proofing */
+-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+.message{
+    background-color: green;
+    color: white;
+padding: 10px;
+    -moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px; /* future proofing */
+-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
